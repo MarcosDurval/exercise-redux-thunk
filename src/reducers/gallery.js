@@ -1,4 +1,4 @@
-import { REQUEST_API, GET_PICTURE } from '../actions';
+import { REQUEST_API, GET_PICTURE, ERROR_PICTURE } from '../actions';
 
 const INITIAL_STATE = {
   isLoading: false,
@@ -21,6 +21,13 @@ function gallery(state = INITIAL_STATE, action) {
       imgURL: action.data,
       defaultImg: false,
     };
+    case ERROR_PICTURE:
+      return{
+        ...state,
+        isLoading: false,
+        imgURL: action.data,
+        defaultImg: true,
+      }
   default:
     return state;
   }
