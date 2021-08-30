@@ -1,7 +1,7 @@
 const randomImage = async () => {
-  const data = await fetch('https://some-random-api.ml/animal/panda')
+  const data = await fetch('https://some-random-api.ml/animu/wink')
   const response = await data.json();
-  return response.image
+  return response.link
 }
 // randomImage().then((data) => console.log(data))
 export default randomImage
